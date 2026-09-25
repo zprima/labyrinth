@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Labyrinth — A little time to get lost</title><meta name="description" content="Generate a fresh maze, pick your size, and draw your way from start to finish."><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23272925'/%3E%3Cpath d='M8 6v20h16V12H14v8h4M14 6h10' fill='none' stroke='%23e8f482' stroke-width='3'/%3E%3C/svg%3E">  <script type="module" crossorigin src="./index-Pl0_OVi3.js"></script>
-  <link rel="stylesheet" crossorigin href="./index-Twkw6zkG.css">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Labyrinth — Find your way out of the dungeon</title><meta name="description" content="Generate a fresh dungeon, pick its size, and carry your torch from the entrance to the stairs."><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171210'/%3E%3Cpath d='M8 6v20h16V12H14v8h4M14 6h10' fill='none' stroke='%23e9a646' stroke-width='3'/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:wght@400;500&display=swap">  <script type="module" crossorigin src="./index-Bwz6r5uM.js"></script>
+  <link rel="stylesheet" crossorigin href="./index-q8Q6fiW2.css">
 </head>
 <body>
   <div class="app">
@@ -10,16 +10,16 @@
     <main>
       <section class="settings" aria-label="Maze controls">
         <div class="size-control">
-          <label for="size">Maze size <output id="size-value" for="size">16 × 16</output></label>
+          <label for="size">Dungeon size <output id="size-value" for="size">16 × 16</output></label>
           <input id="size" type="range" min="6" max="40" value="16" step="1">
         </div>
-        <button id="generate" class="primary">New maze</button>
+        <button id="generate" class="primary">New dungeon</button>
       </section>
       <section class="play" aria-label="Maze puzzle">
         <div class="paper">
-          <div class="paper-top"><span><i class="dot"></i>Start</span><span>Maze <span id="number">001</span></span></div>
+          <div class="paper-top"><span><i class="dot"></i>Entrance</span><span>Level <span id="number">001</span></span></div>
           <div class="maze-stage">
-          <canvas id="maze" tabindex="0" role="application" aria-label="Maze. Use arrow keys to draw a path from the top left entrance to the bottom right exit." aria-describedby="instructions status"></canvas>
+          <canvas id="maze" tabindex="0" role="application" aria-label="Dungeon maze. Use arrow keys to carry your torch from the top left entrance to the stairs at the bottom right." aria-describedby="instructions status"></canvas>
         <div class="movement-controls">
           <div class="direction-pad" role="group" aria-label="Move through the maze" aria-describedby="pad-help">
             <button type="button" class="direction up" data-direction="0" aria-label="Move up"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20V4m-7 7 7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -30,14 +30,14 @@
           <p id="pad-help">Tap to move.<br>Hold to keep going.</p>
         </div>
           </div>
-          <div class="paper-bottom"><span id="status" role="status" aria-live="polite">Start at the blue dot.</span><span class="finish">Exit ↘</span></div>
+          <div class="paper-bottom"><span id="status" role="status" aria-live="polite">Take up the torch and find the stairs.</span><span class="finish">Stairs ↘</span></div>
         </div>
         <div class="toolbar">
           <details>
             <summary>How to play</summary>
-            <p id="instructions">Use the direction buttons to move the blue tip. Tap for one cell, or hold to move along a passage. Move backward to undo a wrong turn. You can also draw directly on the maze or use the arrow keys.</p>
+            <p id="instructions">Use the direction buttons to carry your torch. Tap for one step, or hold to walk down a corridor. Walk back over your embers to undo a wrong turn. You can also drag the torch directly or use the arrow keys. Reach the stairs in the far corner to escape.</p>
           </details>
-          <button id="clear" class="clear">Clear trail</button>
+          <button id="clear" class="clear">Start over</button>
         </div>
       </section>
     </main>
